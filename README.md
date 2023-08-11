@@ -1,5 +1,5 @@
 
-Scrum Cycle 7 Assignment 1 code 
+Scrum Cycle 8 Assignment 1 code 
 Name: Jamaal Henry 
 
 Remember to always create a virtual environment and install the packages in your requirements file
