@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+ul {
+    list-style: none;
+    display: grid; /* Change to grid display */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grid layout settings */
+    gap: 20px; /* Gap between grid items */
+    padding: 20px; /* Add padding to the grid */
+}
+
+li {
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+a:hover {
+    background-color: #f0f0f0;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    padding: 10px;
+}
+
+h3 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+p {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Responsive styles */
+
+@media (max-width: 768px) {
+    ul {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust for smaller screens */
+        gap: 10px; /* Smaller gap for smaller screens */
+        padding: 10px; /* Smaller padding for smaller screens */
+    }
+}

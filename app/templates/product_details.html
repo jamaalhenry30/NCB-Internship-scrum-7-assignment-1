@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+{% block main %}       
+<head>
+    <title>{{ product.title }} Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/product_details.css') }}">
+    <!-- Bootstrap -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Application CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    {% block css %} {% endblock%}
+</head>
+<body>
+    <div class="product-details">
+        <h1>{{ product.title }} Details</h1>
+        <div class="product-info">
+            <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.title }}">
+            <div class="product-description">
+                <p class="price">Price: ${{ product.price }}</p>
+                <p class="description">{{ product.description }}</p>
+            </div>
+        </div>
+        <a class="back-link" href="{{ url_for('display_products') }}">Back to Products</a>
+    </div>
+</body>
+</html>
+{% endblock %}
