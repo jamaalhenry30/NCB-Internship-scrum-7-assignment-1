@@ -1,29 +1,34 @@
 {% extends "base.html" %}
-<!DOCTYPE html>
-<html>
-{% block main %}       
-<head>
-    <title>{{ product.title }} Details</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/product_details.css') }}">
-    <!-- Bootstrap -->
-    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
 
-    <!-- Application CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
-    {% block css %} {% endblock%}
-</head>
-<body>
-    <div class="product-details">
-        <h1>{{ product.title }} Details</h1>
-        <div class="product-info">
-            <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.title }}">
-            <div class="product-description">
-                <p class="price">Price: ${{ product.price }}</p>
-                <p class="description">{{ product.description }}</p>
-            </div>
+{% block main %}      
+{% include 'flash_messages.html' %} 
+<div class="h-100 d-flex align-items-center justify-content-center">
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="card h-100">
+        <img src="{{ url_for('static', filename='images/' + item.image) }}" alt="{{ item.title }}">
+      </div>
+      <div class="h-100 d-flex align-items-center justify-content-center">
+      <div class="col-md-8">
+        <div class="card-body">
+            
+          <h5 class="card-title">{{ item.title }} Details</h5>
+          <p class="card-text">{{ item.description }}</p>
+          <p class="card-text">Price: ${{ item.price }}</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
-        <a class="back-link" href="{{ url_for('display_products') }}">Back to Products</a>
+        </div>
+      </div>
     </div>
-</body>
-</html>
+    <button type="button" class="btn btn-default btn-sm">
+        <span class="glyphicon
+            glyphicon-shopping-cart">
+        </span>
+        <b> Add to Cart </b>
+    </button>
+    <a class="btn btn-primary" href="{{ url_for('display_products') }}">Back to Products</a>
+  </div>
+</div>
+
 {% endblock %}
+
